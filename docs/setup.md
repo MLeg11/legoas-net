@@ -98,3 +98,19 @@ cloudflared tunnel route dns homelab subdomain.legoas.net
 - Restart: sudo systemctl restart cloudflared
 - Logs: journalctl -xeu cloudflared.service --no-pager | tail -30
 - List tunnels: cloudflared tunnel list
+
+## Port Map
+- 80:   nginx (web server, legoas.net)
+- 8081: Docker staging stack
+- 8082: pihole-FTL (Pi-hole admin web UI)
+- 8083: lighttpd (legacy remnant, harmless)
+
+## PHP
+- Version: 8.2.30
+- FPM socket: /run/php/php8.2-fpm.sock
+- Install: sudo apt install php8.2-fpm php8.2-mysqli
+
+## Web Root
+- /var/www/html (owned by pi4b_001:www-data)
+- config.php lives here but is never committed to Git
+- Recreate if server is rebuilt: see includes/config.php template
