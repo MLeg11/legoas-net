@@ -1,0 +1,286 @@
+/*
+ * dashboard.css — Styles for private pages (dashboard, groceries, etc.)
+ * Private pages use a clean dark surface instead of a photo background.
+ * This keeps the aesthetic cohesive but optimised for daily use readability.
+ */
+
+/* ============================================================
+   PRIVATE PAGE BASE
+   Solid dark background — no photo, optimised for reading/using.
+   ============================================================ */
+.page-private {
+  background-color: #111111;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   PRIVATE NAV
+   Same structure as public nav but slightly different styling.
+   ============================================================ */
+.nav-private {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 56px;
+  background: rgba(15, 15, 15, 0.98);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-private .nav-logo {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.nav-private .nav-logo span {
+  color: var(--accent);
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-user-name {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  display: none;
+}
+
+.nav-signout {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.40);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 20px;
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.nav-signout:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+}
+
+/* ============================================================
+   PAGE WRAPPER
+   Main content area, padded below the fixed nav.
+   ============================================================ */
+.page-wrapper {
+  padding: 72px 20px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   WELCOME HEADER
+   ============================================================ */
+.page-header {
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.page-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================================
+   APP GRID
+   Cards for each app/section. 2 columns on mobile, 3 on desktop.
+   ============================================================ */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.app-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px 16px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  text-decoration: none;
+  display: block;
+}
+
+.app-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.app-card:active {
+  transform: translateY(0);
+}
+
+.app-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.app-card-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.app-card-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.4;
+}
+
+.app-card-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.30);
+}
+
+.app-card-badge.soon {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+/* ============================================================
+   DASHBOARD SECTION LABELS
+   ============================================================ */
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  margin-bottom: 12px;
+  margin-top: 28px;
+}
+
+.section-label:first-of-type {
+  margin-top: 0;
+}
+
+/* ============================================================
+   BOTTOM NAV (private, mobile)
+   ============================================================ */
+.bottom-nav-private {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  background: rgba(10, 10, 10, 0.98);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bottom-nav-private a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+.bottom-nav-private .bn-label {
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.bottom-nav-private .bn-label.active {
+  color: var(--accent);
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet and up
+   ============================================================ */
+@media (min-width: 640px) {
+  .nav-private {
+    padding: 0 32px;
+  }
+
+  .nav-user-name {
+    display: block;
+  }
+
+  .page-wrapper {
+    padding: 80px 32px 40px;
+  }
+
+  .app-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .bottom-nav-private {
+    display: none;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-private {
+    padding: 0 48px;
+  }
+
+  .page-wrapper {
+    padding: 88px 48px 40px;
+  }
+}

@@ -1,5 +1,33 @@
+# ============================================================
+# .gitignore — Files that must NEVER be committed to Git
+# ============================================================
+
+# Site credentials — lives on server only
+includes/config.php
+
+# One-time setup script — delete after use, but just in case
+setup.php
+
+# Environment files
 .env
 *.env
-*.sh
-*.py
-admin/
+
+# macOS junk files
+.DS_Store
+**/.DS_Store
+
+# Windows junk files
+Thumbs.db
+desktop.ini
+
+# VS Code workspace files (editor-specific, not project-specific)
+.vscode/
+
+# PHP error log
+*.log
+
+# Uploaded files (if you add file upload features later)
+# uploads/
+
+# Node modules (if you ever add build tools)
+node_modules/

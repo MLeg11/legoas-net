@@ -1,0 +1,19 @@
+/*
+ * theme.css — Seasonal color tokens
+ * To change the season: update the four accent variables below.
+ * Everything on the site inherits from these — one edit changes everything.
+ *
+ * Current: Warm Amber (Autumn/Winter)
+ * Spring:  --accent: #6B9E6B  (sage green)
+ * Summer:  --accent: #4A90C4  (coastal blue)
+ * Autumn:  --accent: #C9954C  (amber gold)
+ * Winter:  --accent: #7B9EC4  (cool steel)
+ */
+
+:root {
+  --accent:          #C9954C;
+  --accent-dim:      rgba(201, 149, 76, 0.12);
+  --accent-border:   rgba(201, 149, 76, 0.30);
+  --accent-hover:    rgba(201, 149, 76, 0.20);
+  --accent-text:     #7a5520;
+}
